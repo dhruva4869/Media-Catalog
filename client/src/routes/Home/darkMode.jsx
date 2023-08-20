@@ -6,17 +6,17 @@ function darkMode() {
     const toggleDark = () => {
         setIsDark(!isDark);
     }
-    
     useEffect(() => {
-        const body = document.body;
-        body.style.backgroundColor = isDark ? "#121212" : "white";
+      const body = document.body;
+      body.style.backgroundColor = isDark ? "#121212" : "white";
     })
+    
 
   return (
     <div>
     <p align="right" style={{cursor:'pointer'}}>
         {!isDark ? <BsFillMoonStarsFill size={20}  onClick={toggleDark} /> : <BsSunFill size={20} onClick={toggleDark} />}
-        {/* <button onClick={toggleDark} style={{borderRadius:"10px"}}></button> */}
+        {/* <button onClick={changeBackground} style={{borderRadius:"10px"}}>Click</button> */}
     </p>
     </div>
   )

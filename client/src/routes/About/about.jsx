@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { BsFillFileEarmarkPlusFill } from "react-icons/bs"
+import bg from "./wallpaperflare.com_wallpaper (29).jpg"
 
 function Book() {
     const baseUrl = "http://localhost:8000/api/animes";
@@ -51,7 +52,10 @@ function Book() {
         <span style={{color:"lightgreen"}}> roots in Japan</span>, 
         it has since <span style={{color:"lightgreen"}}>spread to other countries</span>, and today, anime can be found in many <span style={{color:"lightgreen"}}>
         different languages
-        </span>, including English.</p> <br />
+        </span>, including English.</p> 
+        <img src={bg} alt="girl-with-umbrella" style={{borderRadius:"5px"}} />
+        <br />
+        <p style={{fontSize:"11px", textAlign:"center"}}>Art by <a href="https://www.pixiv.net/en/artworks/64364428" target="_blank">@たん旦</a></p> <br />
 
         <Link to="/createanime"><BsFillFileEarmarkPlusFill size={20} /> Add New Anime</Link>
 

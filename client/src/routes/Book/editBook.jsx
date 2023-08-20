@@ -111,6 +111,7 @@ function editBook() {
       <p>
         This is where you can Edit your Mangas to make them up to date with your predictions and feelings
       </p>
+      <Link to="/books">Go Back </Link><br/><br/>
 
       <button onClick={removeBook} className="delete">
         Delete Book

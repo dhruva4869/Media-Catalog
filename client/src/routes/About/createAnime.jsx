@@ -57,7 +57,7 @@ function createAnime() {
 
   return (
     <div>
-      <h1>Create Book</h1>
+      <h1>Create Anime</h1>
       <p>
         This is where we use NodeJs, Express & MongoDB to grab some data. The
         data below is pulled from a MongoDB database.

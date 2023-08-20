@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { BsFillFileEarmarkPlusFill } from "react-icons/bs"
+import bg from "./bg.jpg"
 
 function Book() {
     const baseUrl = "http://localhost:8000/api/books";
@@ -47,7 +48,12 @@ function Book() {
         <p style={{color:"cyan"}}>Manga are comics or graphic novels originating from Japan. <span style={{color:"lightgreen"}}>Most manga conform to a 
         style developed in Japan in the late 19th century,
         and the form has a  long history in earlier Japanese art. </span>
-        The term manga is used in Japan to refer to both comics and cartooning.</p> <br />
+        The term manga is used in Japan to refer to both comics and cartooning.</p>
+        <img src={bg} alt="girl-with-sword" style={{borderRadius:"5px"}} />
+        <br />
+        <p style={{fontSize:"11px", textAlign:"center"}}>Art by <a href="https://www.artstation.com/chinfongart" target="_blank">@chinfongart</a></p>
+        
+        
 
         <Link to="/createbook"><BsFillFileEarmarkPlusFill size={20} /> Add New Manga</Link>
 

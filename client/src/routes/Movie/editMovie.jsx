@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import NoImageSelected from "../../assets/no-image-selected.jpg";
 
-function editAnime() {
+function editMovie() {
   const navigate = useNavigate();
   const urlSlug = useParams();
-  const baseUrl = `http://localhost:8000/api/animes/${urlSlug.slug}`;
+  const baseUrl = `http://localhost:8000/api/movies/${urlSlug.slug}`;
 
-  const [animeId, setanimeId] = useState("");
+  const [movieId, setMovieId] = useState("");
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
   const [stars, setStars] = useState(0);
@@ -26,7 +25,7 @@ function editAnime() {
       }
 
       const data = await response.json();
-      setanimeId(data._id);
+      setMovieId(data._id);
       setTitle(data.title);
       setSlug(data.slug);
       setStars(data.stars);
@@ -45,7 +44,7 @@ function editAnime() {
     console.table([title, slug]);
 
     const formData = new FormData();
-    formData.append("animeId", animeId);
+    formData.append("movieId", movieId);
     formData.append("title", title);
     formData.append("slug", slug);
     formData.append("stars", stars);
@@ -57,7 +56,7 @@ function editAnime() {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/api/animes", {
+      const response = await fetch("http://localhost:8000/api/movies", {
         method: "PUT",
         body: formData,
       });
@@ -90,15 +89,15 @@ function editAnime() {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/animes/" + animeId,
+        "http://localhost:8000/api/movies/" + movieId,
         {
           method: "DELETE",
         }
       );
 
       if (response.ok) {
-        navigate("/about");
-        console.log("Anime removed.");
+        navigate("/movies");
+        console.log("Movie removed.");
       }
     } catch (error) {
       console.error(error);
@@ -107,14 +106,14 @@ function editAnime() {
 
   return (
     <div>
-      <h1>Edit Anime</h1>
+      <h1>Edit Movie</h1>
       <p>
         Be free to make any changes you want! Don't worry, You can come here anytime! 
       </p>
-      <Link to="/about">Go Back </Link><br/><br/>
+      <Link to="/movies">Go Back </Link><br/><br/>
 
       <button onClick={removeBook} className="delete">
-        Delete Anime
+        Delete Movie
       </button>
 
       {submitted ? (
@@ -193,4 +192,4 @@ function editAnime() {
   );
 }
 
-export default editAnime;
+export default editMovie;
